@@ -3,68 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeonFurry</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Подключаем шрифты Google Fonts для красоты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>NeonFurry — Неоновый мир</title>
+    <style>
+        :root {
+            --bg-color: #0f0c19;
+            --text-main: #ffffff;
+            --text-secondary: #a0a0b0;
+            --accent-red: #ff4757;
+            --neon-blue: #00d2ff;
+            --neon-purple: #5f27cd;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid var(--accent-red);
+            color: var(--accent-red);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(255, 71, 87, 0.3);
+        }
+
+        .warning-text {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .badge-link {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .badge-link:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.2);
+        }
+
+        .section-title {
+            color: var(--neon-blue);
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-top: 50px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: "🐾";
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 20px 15px; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Хедер с кнопками -->
-    <header>
-        <nav>
-            <a href="https://vrc.group/NFUR.0746" target="_blank" class="btn vrchat">VRChat</a>
-            <a href="https://www.roblox.com/communities/811079309" target="_blank" class="btn roblox">Roblox</a>
-            <a href="https://discord.com/invite/Jy3wGk8XnZ" target="_blank" class="btn discord">Discord</a>
-        </nav>
-    </header>
+    <div class="container">
+        <h1>NeonFurry</h1>
+        <p class="subtitle">Где неоновая эстетика встречается с пушистыми аватарами.</p>
 
-    <!-- Основной контент -->
-    <main>
-        <section class="hero">
-            <h1>NeonFurry</h1>
-            <p class="subtitle">Где неоновая эстетика встречается с пушистыми аватарами.</p>
-        </section>
+        <div class="highlight-box">
+            🔴 Это текст красного цвета (реализован через CSS, а не Markdown)
+        </div>
 
-        <section class="about">
-            <h2>🌐 О сообществе</h2>
-            <p>NeonFurry — это цифровое сообщество, объединяющее любителей фурри-культуры, киберпанка и современных виртуальных пространств. Мы создаем неоновый мир, в котором каждый может быть собой.</p>
-        </section>
+        <p class="warning-text">
+            В РФ Telegram заблокирован, поэтому кнопка Telegram не всегда может работать в браузере.
+        </p>
 
-        <section class="worlds">
-            <h2>🎮 Наши миры</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>VRChat</h3>
-                    <p>Погружение в полную меру. Наши миры, ивенты и еженедельные сходки в неоновых локациях.</p>
-                </div>
-                <div class="card">
-                    <h3>Roblox</h3>
-                    <p>Строительство и выживание. Собственная экосистема игр, турниры и уникальные аватары.</p>
-                </div>
-                <div class="card">
-                    <h3>Discord</h3>
-                    <p>Сердце нашего сообщества. Текстовые и голосовые каналы для общения и обмена артами.</p>
-                </div>
-            </div>
-        </section>
+        <div class="badges-grid">
+            <a href="https://vrc.group/NFUR.0746" class="badge-link" style="background: #9cf;">
+                VRChat Explore
+            </a>
+            <a href="https://www.roblox.com/communities/811079309" class="badge-link" style="background: #eb4545;">
+                Roblox Build
+            </a>
+            <a href="https://discord.com/invite/Jy3wGk8XnZ" class="badge-link" style="background: #5865F2;">
+                Discord Chat
+            </a>
+            <a href="https://t.me/NeonFurry" class="badge-link" style="background: #0088cc;">
+                Telegram News
+            </a>
+        </div>
 
-        <section class="philosophy">
-            <h2>💡 Наша философия</h2>
-            <p>Код, неон и пушистые хвосты — наш фирменный стиль. Мы создаем безопасное пространство для творчества и отдыха.</p>
-            <div class="rules">
-                <span>1. Уважение</span>
-                <span>2. Безопасность</span>
-                <span>3. Веселье</span>
-            </div>
-        </section>
-    </main>
+        <h2 class="section-title">🌐 О сообществе</h2>
+        <p>
+            <strong>NeonFurry</strong> — это цифровое сообщество, объединяющее любителей фурри‑культуры, киберпанка и современных виртуальных пространств. Мы создаём неоновый мир, в котором каждый может быть собой.
+        </p>
+        <p>
+            Мы верим, что технологии должны дарить эмоции. NeonFurry — это безопасное пространство для творчества, программирования, 3D‑моделирования и просто весёлого отдыха. Код, неон и пушистые хвосты — наш фирменный стиль.
+        </p>
 
-    <footer>
-        <p>Made with ⚡️ and 🐾 by NeonFurry</p>
-    </footer>
+        <h2 class="section-title">🎮 Наши миры</h2>
+        <ul>
+            <li><strong>VRChat:</strong> Погружение в полную меру. Наши миры, ивенты и еженедельные сходки в неоновых локациях.</li>
+            <li><strong>Roblox:</strong> Строительство и выживание. Собственная экосистема игр, турниры и уникальные аватары.</li>
+            <li><strong>Discord:</strong> Сердце нашего сообщества. Текстовые и голосовые каналы для общения, обмена артами и координации.</li>
+            <li><strong>Telegram:</strong> Быстрые новости, мемы и анонсы, чтобы всегда оставаться на связи.</li>
+        </ul>
+
+        <h2 class="section-title">💡 Наша философия</h2>
+        <p>
+            Мы создаём ламповое место с неоновой подсветкой. Неважно, кто вы — опытный разработчик, 3D‑художник или просто ищете компанию для игр по вечерам. У нас всегда найдётся место у виртуального костра.
+        </p>
+
+        <h3>Наши правила:</h3>
+        <ol>
+            <li><strong>Уважение.</strong> Мы не терпим токсичности и дискриминации.</li>
+            <li><strong>Безопасность.</strong> Ваши личные данные под защитой.</li>
+            <li><strong>Веселье.</strong> Оставь проблемы за порогом и просто отдохни.</li>
+        </ol>
+
+        <p style="text-align: center; margin-top: 50px; color: #555; font-size: 0.8rem;">
+            Made with ⚡️ and 🐾 by NeonFurry
+        </p>
+    </div>
 
 </body>
 </html>
